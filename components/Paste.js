@@ -1,39 +1,30 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwl";
+import styled from "styled-components";
 
-const Pre = ({ children }) => (
-  <pre style={{
-    textAlign: "left",
-    margin: "1em 0",
-    padding: "0.5em",
-    overflow: "scroll"
-  }}>
-    {children}
-  </pre>
-);
+const Pre = styled.pre`
+  text-align: left;
+  margin: 1em 0;
+  padding: 0.5em;
+  overflow: scroll;
+`;
 
-const Line = ({ children }) => (
-  <div style={{ display: "table-row" }}>{children}</div>
-);
+const Line = styled.div`
+  display: table-row;
+`;
 
-const LineNo = ({ children }) => (
-  <span style={{
-    display: "table-cell",
-    textAlign: "right",
-    paddingRight: "1em",
-    userSelect: "none",
-    opacity: "0.5"
-  }}>
-    {children}
-  </span>
-)
+const LineNo = styled.span`
+  display: table-cell;
+  text-align: right;
+  padding-right: 1em;
+  user-select: none;
+  opacity: 0.5;
+`;
 
-const LineContent = ({ children }) => (
-  <span style={{ display: "table-cell" }}>
-    {children}
-  </span>
-)
+const LineContent = styled.span`
+  display: table-cell;
+`;
 
 const Paste = ({ code, language = "js" }) => (
   <Highlight {...defaultProps} theme={theme} code={code} language={language}>
