@@ -11,7 +11,7 @@ function extname(path) {
 function Pasted({ id }) {
   const [code, setCode] = useState("Loading code...");
   const ext = extname(id);
-  const cid = ext ? id.trimEnd(ext) : id;
+  const cid = ext ? id.slice(0, -ext.length) : id;
 
   useEffect(() => {
     fetch(`https://pasted.vercel.app/api/${cid}`)

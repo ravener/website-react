@@ -26,7 +26,13 @@ const LineContent = styled.span`
   display: table-cell;
 `;
 
-const Paste = ({ code, language = "js" }) => (
+const Paste = ({ code, language = "js" }) => (<div>
+  <style jsx global>{`
+  body {
+    color: #d6deeb;
+    backgroundColor: #011627;
+  }
+  `}</style>
   <Highlight {...defaultProps} theme={theme} code={code} language={language}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <Pre className={className} style={style}>
@@ -43,6 +49,7 @@ const Paste = ({ code, language = "js" }) => (
       </Pre>
     )}
   </Highlight>
+</div>
 );
 
 export default Paste;
