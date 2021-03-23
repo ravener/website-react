@@ -9,7 +9,7 @@ const Pre = ({ children }) => (
     padding: "0.5em",
     overflow: "scroll"
   }}>
-    {childen}
+    {children}
   </pre>
 );
 
