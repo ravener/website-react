@@ -1,6 +1,6 @@
 import { getDatabaseConnection } from "../../utils/mongodb";
 
-export default function (req, res) {
+export default async function (req, res) {
   // Make sure it's a POST request.
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed." });
