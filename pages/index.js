@@ -19,7 +19,7 @@ function Pasted({ id }) {
         if (!res.ok) return { code: null };
         return res.json();
       })
-      .then(({ code }) => code && setCode(code));
+      .then(({ body }) => setCode(body));
   });
 
   if (!code) return <Error statusCode={404} />;
